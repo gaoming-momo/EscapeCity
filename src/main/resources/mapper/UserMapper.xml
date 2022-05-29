@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.wxcloudrun.dao.UserMapper">
+
+    <resultMap id="userMapper" type="com.tencent.wxcloudrun.model.User">
+        <id property="id" column="id"/>
+        <result property="nick_name" column="nick_name"/>
+        <result property="user_id" column="user_id" />
+    </resultMap>
+
+    <select id="getUser" resultMap="userMapper">
+        SELECT *
+        FROM t_user
+        WHERE user_id = ${user_id}
+    </select>
+
+    <delete id="deleteUser" parameterType="com.tencent.wxcloudrun.model.User">
+        DELETE
+        FROM t_user
+        where user_id = #{user_id}
+    </delete>
+
+    <update id="insert" parameterType="com.tencent.wxcloudrun.model.User">
+        INSERT INTO `t_user`(`id`, `nick_name`,`user_id`)
+        VALUE(#{id}, #{nick_name}, #{user_id})
+    </update>
+
+</mapper>
