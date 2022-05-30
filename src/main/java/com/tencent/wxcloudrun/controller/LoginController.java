@@ -47,6 +47,7 @@ public class LoginController {
     //1、向微信服务器 使用登录凭证 code 获取 session_key 和 openid
     //请求参数
     String params = "appid=" + wxspAppid + "&secret=" + wxspSecret + "&js_code=" + code + "&grant_type=" + grant_type;
+    url = url + "?" + params;
     //发送请求
     OkHttpClient client = new OkHttpClient();
     //用url发起请求
