@@ -1,6 +1,5 @@
 package com.tencent.wxcloudrun.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.net.http.HttpRequest;
-import java.util.Optional;
 
 /**
  * counter控制器
