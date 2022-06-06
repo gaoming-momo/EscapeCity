@@ -49,16 +49,12 @@ public class LoginController {
     //1、向微信服务器 使用登录凭证 code 获取 session_key 和 openid
     //请求参数
     String params = "appid=" + wxspAppid + "&secret=" + wxspSecret + "&js_code=" + code + "&grant_type=" + grant_type;
-    url = url + "?" + params;
     //发送请求
-    OkHttpClient client = new OkHttpClient();
-    //用url发起请求
-    Request request = new Request.Builder().url(url).build();
-    //拿到响应
-    Response response = client.newCall(request).execute();
-    logger.error("response:{}",response);
+    params = params.trim();
+    String sr = HttpUtils.sendGet(url, params);;
+    logger.error("response:{}",sr);
     //解析相应内容（转换成json对象）
-    return ApiResponse.ok(response);
+    return ApiResponse.ok(sr);
   }
 
   public static void main(String[] args) throws IOException {
