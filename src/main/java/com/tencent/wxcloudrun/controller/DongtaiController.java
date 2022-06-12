@@ -47,7 +47,16 @@ public class DongtaiController {
     dongtaiService.insert(dongtai);
     return ApiResponse.ok();
   }
-
+  @RequestMapping(value = "/fabu")
+  public ApiResponse uploadFiles(String fileIds, String openid, String text)  {
+    logger.error("收到上传请求 /uploadFiles");
+    logger.error("openid：" + openid);
+    logger.error("text：" + text);
+    logger.error("fileIds：" + fileIds);
+    Dongtai dongtai = new Dongtai(openid, text, fileIds);
+    dongtaiService.insert(dongtai);
+    return ApiResponse.ok();
+  }
 
   /**
    * 删除

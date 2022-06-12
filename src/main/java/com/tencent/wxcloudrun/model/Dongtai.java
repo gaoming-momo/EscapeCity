@@ -7,6 +7,11 @@ import java.time.LocalDateTime;
 
 @Data
 public class Dongtai implements Serializable {
+  public Dongtai(String openId, String text, String media_list){
+      this.uid = openId;
+      this.text = text;
+      this.media_list = media_list;
+  }
 
   private Integer id;
   private String uid;
