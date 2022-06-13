@@ -17,6 +17,7 @@ CREATE table `t_dongtai` (
     `uid` varchar(36) NOT NULL ,
     `media_list` text ,
     `text` text ,
+    `nickName` text ,
     `shoucang_num` int(11) default 0 ,
     `dian_zan` int(11) default 0 ,
     `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,

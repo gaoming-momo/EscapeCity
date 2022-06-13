@@ -7,6 +7,7 @@
         <result property="uid" column="uid"/>
         <result property="media_list" column="media_list"/>
         <result property="text" column="text"/>
+        <result property="text" column="nickName"/>
         <result property="shoucang_num" column="shoucang_num"/>
         <result property="dian_zan" column="dian_zan"/>
         <result property="createdAt" column="createdAt" javaType="java.time.LocalDateTime" />
@@ -25,8 +26,8 @@
     </delete>
 
     <update id="insert" parameterType="com.tencent.wxcloudrun.model.Dongtai">
-        INSERT INTO `t_dongtai`(`uid`, `media_list`, `text`, `shoucang_num`, `dian_zan`)
-        VALUE(#{uid}, #{media_list}, #{text}, #{shoucang_num}, #{dian_zan})
+        INSERT INTO `t_dongtai`(`uid`, `media_list`, `text`, `nickName`, `shoucang_num`, `dian_zan`)
+        VALUE(#{uid}, #{media_list}, #{text}, #{nickName}, #{shoucang_num}, #{dian_zan})
 
     </update>
 
