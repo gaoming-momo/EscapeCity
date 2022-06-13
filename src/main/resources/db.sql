@@ -18,6 +18,7 @@ CREATE table `t_dongtai` (
     `media_list` text ,
     `text` text ,
     `nickName` text ,
+    `avatarUrl` text ,
     `shoucang_num` int(11) default 0 ,
     `dian_zan` int(11) default 0 ,
     `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
