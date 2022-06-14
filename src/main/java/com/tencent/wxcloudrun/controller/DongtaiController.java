@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -57,6 +58,13 @@ public class DongtaiController {
     Dongtai dongtai = new Dongtai(openid, text, nickName, avatarUrl, fileIds);
     dongtaiService.insert(dongtai);
     return ApiResponse.ok();
+  }
+  @RequestMapping(value = "/fetch")
+  public ApiResponse getDataPage(Integer currentPage, Integer pageSize){
+    logger.error("收到请求： /fetch");
+    logger.error("currentPage: "+ currentPage + "  , pageSize: " + pageSize);
+    List<Dongtai> dongtaiList = dongtaiService.fetch(currentPage, pageSize);
+    return ApiResponse.ok(dongtaiList);
   }
 
   /**

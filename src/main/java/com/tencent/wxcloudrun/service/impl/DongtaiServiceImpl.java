@@ -9,6 +9,7 @@ import com.tencent.wxcloudrun.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -35,4 +36,10 @@ public class DongtaiServiceImpl implements DongtaiService {
   public void delete(Dongtai dongtai) {
     dongtaiMapper.delete(dongtai);
   }
+
+  @Override
+  public List<Dongtai> fetch(Integer currentPage, Integer pageSize) {
+    return dongtaiMapper.fetch(currentPage, pageSize);
+  }
+
 }
