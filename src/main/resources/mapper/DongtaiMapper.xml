@@ -7,8 +7,8 @@
         <result property="uid" column="uid"/>
         <result property="media_list" column="media_list"/>
         <result property="text" column="text"/>
-        <result property="text" column="nickName"/>
-        <result property="text" column="avatarUrl"/>
+        <result property="nickName" column="nickName"/>
+        <result property="avatarUrl" column="avatarUrl"/>
         <result property="shoucang_num" column="shoucang_num"/>
         <result property="dian_zan" column="dian_zan"/>
         <result property="createdAt" column="createdAt" javaType="java.time.LocalDateTime" />
