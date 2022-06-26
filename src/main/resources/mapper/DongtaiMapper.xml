@@ -21,7 +21,7 @@
     </select>
 
     <select id="fetch" resultMap="dongtaiMapper">
-        select * from `t_dongtai`  limit #{currentPage} , #{pageSize}
+        select * from `t_dongtai`  limit #{currentPage} , #{pageSize} order by createdAt desc
     </select>
 
     <delete id="delete" parameterType="com.tencent.wxcloudrun.model.Dongtai">
