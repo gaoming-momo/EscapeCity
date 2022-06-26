@@ -63,6 +63,7 @@ public class DongtaiController {
   public ApiResponse getDataPage(Integer currentPage, Integer pageSize){
     logger.error("收到请求： /fetch");
     logger.error("currentPage: "+ currentPage + "  , pageSize: " + pageSize);
+    currentPage = currentPage * pageSize ;
     List<Dongtai> dongtaiList = dongtaiService.fetch(currentPage, pageSize);
     return ApiResponse.ok(dongtaiList);
   }
