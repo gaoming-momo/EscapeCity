@@ -31,8 +31,8 @@
     </delete>
 
     <update id="insert" parameterType="com.tencent.wxcloudrun.model.Dongtai">
-        INSERT INTO `t_dongtai`(`uid`, `media_list`, `text`, `nickName`, `avatarUrl`, `shoucang_num`, `dian_zan`)
-        VALUE(#{uid}, #{media_list}, #{text}, #{nickName}, #{avatarUrl}, #{shoucang_num}, #{dian_zan})
+        INSERT INTO `t_dongtai`(`uid`, `media_list`, `text`, `nickName`, `avatarUrl`, `shoucang_num`, `dian_zan`,`location`)
+        VALUE(#{uid}, #{media_list}, #{text}, #{nickName}, #{avatarUrl}, #{shoucang_num}, #{dian_zan}, #{location})
 
     </update>
 

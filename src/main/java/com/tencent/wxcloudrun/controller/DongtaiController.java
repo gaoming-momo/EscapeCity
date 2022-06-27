@@ -49,13 +49,15 @@ public class DongtaiController {
     return ApiResponse.ok();
   }
   @RequestMapping(value = "/fabu")
-  public ApiResponse uploadFiles(String fileIds, String openid, String text, String nickName, String avatarUrl)  {
+  public ApiResponse uploadFiles(String fileIds, String openid, String text,
+                                 String nickName, String avatarUrl, String location)  {
     logger.error("收到上传请求 /uploadFiles");
     logger.error("openid：" + openid);
     logger.error("text：" + text);
     logger.error("fileIds：" + fileIds);
     logger.error("avatarUrl : "+avatarUrl);
-    Dongtai dongtai = new Dongtai(openid, text, nickName, avatarUrl, fileIds);
+    logger.error("location : "+location);
+    Dongtai dongtai = new Dongtai(openid, text, nickName, avatarUrl, fileIds,location);
     dongtaiService.insert(dongtai);
     return ApiResponse.ok();
   }

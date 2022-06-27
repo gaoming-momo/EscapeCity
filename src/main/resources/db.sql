@@ -23,5 +23,6 @@ CREATE table `t_dongtai` (
     `dian_zan` int(11) default 0 ,
     `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `location` text ,
     PRIMARY KEY (`id`)
 )
