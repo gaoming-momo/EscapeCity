@@ -17,4 +17,6 @@ public interface DongtaiMapper {
   void delete(Dongtai dongtai);
 
   List<Dongtai> fetch(@Param("currentPage") Integer currentPage, @Param("pageSize") Integer pageSize);
+
+  List<Dongtai> mine(@Param("currentPage") Integer currentPage, @Param("pageSize") Integer pageSize , @Param("uid") String uid);
 }

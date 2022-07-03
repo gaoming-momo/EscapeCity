@@ -42,4 +42,9 @@ public class DongtaiServiceImpl implements DongtaiService {
     return dongtaiMapper.fetch(currentPage, pageSize);
   }
 
+  @Override
+  public List<Dongtai> mine(Integer currentPage, Integer pageSize, String uid) {
+    return dongtaiMapper.mine(currentPage, pageSize, uid);
+  }
+
 }
