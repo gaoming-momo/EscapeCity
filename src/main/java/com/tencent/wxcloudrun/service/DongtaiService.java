@@ -11,4 +11,5 @@ public interface DongtaiService {
   void insert(Dongtai dongtai);
   void delete(Dongtai dongtai);
   List<Dongtai> fetch(Integer currentPage, Integer pageSize);
+  List<Dongtai> mine(Integer currentPage, Integer pageSizek, String uid);
 }

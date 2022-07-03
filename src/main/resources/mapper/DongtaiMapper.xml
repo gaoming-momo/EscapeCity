@@ -23,7 +23,10 @@
     <select id="fetch" resultMap="dongtaiMapper">
         select * from `t_dongtai` order by `createdAt` desc limit #{currentPage} , #{pageSize}
     </select>
-
+    <select id="mine" resultMap="dongtaiMapper">
+        select * from `t_dongtai` where `uid`=#{uid}
+        order by `createdAt` desc limit #{currentPage} , #{pageSize}
+    </select>
     <delete id="delete" parameterType="com.tencent.wxcloudrun.model.Dongtai">
         DELETE
         FROM Counters

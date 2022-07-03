@@ -71,6 +71,21 @@ public class DongtaiController {
   }
 
   /**
+   * 我的动态（已发布）
+   * @param currentPage
+   * @param pageSize
+   * @return
+   */
+  @RequestMapping(value = "/mine")
+  public ApiResponse mine(Integer currentPage, Integer pageSize, String uid){
+    logger.error("收到请求： /fetch");
+    logger.error("currentPage: "+ currentPage + "  , pageSize: " + pageSize + " uid:" + uid);
+    currentPage = currentPage * pageSize ;
+    List<Dongtai> dongtaiList = dongtaiService.mine(currentPage, pageSize, uid);
+    return ApiResponse.ok(dongtaiList);
+  }
+
+  /**
    * 删除
    * @param
    * @return
