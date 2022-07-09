@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.tencent.wxcloudrun.dao.DongtaiMapper">
+<mapper namespace="com.tencent.wxcloudrun.dao.PinglunMapper">
 
-    <resultMap id="dongtaiMapper" type="com.tencent.wxcloudrun.model.Dongtai">
+    <resultMap id="pinglunMapper" type="com.tencent.wxcloudrun.model.Pinglun">
         <id property="id" column="id"/>
         <result property="uid" column="uid"/>
-        <result property="media_list" column="media_list"/>
+        <result property="fuid" column="fuid"/>
+        <result property="did" column="did"/>
         <result property="text" column="text"/>
         <result property="nickName" column="nickName"/>
         <result property="avatarUrl" column="avatarUrl"/>
-        <result property="shoucang_num" column="shoucang_num"/>
+        <result property="level" column="level"/>
         <result property="dian_zan" column="dian_zan"/>
         <result property="createdAt" column="createdAt" javaType="java.time.LocalDateTime" />
         <result property="updatedAt" column="updatedAt" javaType="java.time.LocalDateTime"  />
         <result property="location" column="location" />
     </resultMap>
-    <select id="getById" resultMap="dongtaiMapper" parameterType="java.lang.Integer">
+    <select id="getById" resultMap="pinglunMapper" parameterType="java.lang.Integer">
         SELECT *
-        FROM `t_dongtai`
+        FROM `t_pinglun`
         WHERE id = #{id}
     </select>
 
-    <select id="fetch" resultMap="dongtaiMapper">
-        select * from `t_dongtai` order by `createdAt` desc limit #{currentPage} , #{pageSize}
+    <select id="fetch" resultMap="pinglunMapper">
+        select * from `t_pinglun` order by `createdAt` desc limit #{currentPage} , #{pageSize}
     </select>
-    <select id="mine" resultMap="dongtaiMapper">
+    <select id="mine" resultMap="pinglunMapper">
         select * from `t_dongtai` where `uid`=#{uid}
         order by `createdAt` desc limit #{currentPage} , #{pageSize}
     </select>
-    <delete id="delete" parameterType="com.tencent.wxcloudrun.model.Dongtai">
+    <delete id="delete" parameterType="com.tencent.wxcloudrun.model.Pinglun">
         DELETE
         FROM Counters
         where id = #{id}
     </delete>
 
     <update id="insert" parameterType="com.tencent.wxcloudrun.model.Dongtai">
-        INSERT INTO `t_dongtai`(`uid`, `media_list`, `text`, `nickName`, `avatarUrl`, `shoucang_num`, `dian_zan`,`location`)
-        VALUE(#{uid}, #{media_list}, #{text}, #{nickName}, #{avatarUrl}, #{shoucang_num}, #{dian_zan}, #{location})
+        INSERT INTO `t_pinglun`(`uid`, `fuid`, `did`, `text`, `nickName`, `avatarUrl`, `level`, `dian_zan`,`location`)
+        VALUE(#{uid}, #{fuid}, #{did}, #{text}, #{nickName}, #{avatarUrl}, #{level}, #{dian_zan}, #{location})
 
     </update>
 
