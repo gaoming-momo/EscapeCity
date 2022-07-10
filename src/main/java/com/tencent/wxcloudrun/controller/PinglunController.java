@@ -1,7 +1,9 @@
 package com.tencent.wxcloudrun.controller;
 
 import com.tencent.wxcloudrun.config.ApiResponse;
+import com.tencent.wxcloudrun.model.Dongtai;
 import com.tencent.wxcloudrun.model.Pinglun;
+import com.tencent.wxcloudrun.service.DongtaiService;
 import com.tencent.wxcloudrun.service.PinglunService;
 import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
@@ -23,10 +25,12 @@ import java.util.Optional;
 public class PinglunController {
 
   final PinglunService pinglunService;
+  final DongtaiService dongtaiService;
   final Logger logger;
 
-  public PinglunController(@Autowired PinglunService pinglunService) {
+  public PinglunController(@Autowired PinglunService pinglunService , @Autowired DongtaiService dongtaiService) {
     this.pinglunService = pinglunService;
+    this.dongtaiService = dongtaiService;
     this.logger = LoggerFactory.getLogger(PinglunController.class);
   }
   @RequestMapping(value = "/get")
@@ -44,6 +48,11 @@ public class PinglunController {
   ApiResponse get(@RequestBody Pinglun pinglun) {
     logger.error("add get request:{}",pinglun);
     pinglunService.insert(pinglun);
+    Dongtai dongtai = dongtaiService.getById(pinglun.getDid()).get();
+    Integer pinglun_num = dongtai.getPinglun_num();
+    pinglun_num = pinglun_num + 1;
+    dongtai.setPinglun_num(pinglun_num);
+    dongtaiService.insert(dongtai);
     return ApiResponse.ok();
   }
   @RequestMapping(value = "/fabu")

@@ -11,6 +11,7 @@
         <result property="avatarUrl" column="avatarUrl"/>
         <result property="shoucang_num" column="shoucang_num"/>
         <result property="dian_zan" column="dian_zan"/>
+        <result property="pinglun_num" column="pinglun_num" />
         <result property="createdAt" column="createdAt" javaType="java.time.LocalDateTime" />
         <result property="updatedAt" column="updatedAt" javaType="java.time.LocalDateTime"  />
         <result property="location" column="location" />

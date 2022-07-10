@@ -19,6 +19,7 @@ CREATE table `t_dongtai` (
     `text` text ,
     `nickName` text ,
     `avatarUrl` text ,
+    `pinglun_num` int(11) default 0 ,
     `shoucang_num` int(11) default 0 ,
     `dian_zan` int(11) default 0 ,
     `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
