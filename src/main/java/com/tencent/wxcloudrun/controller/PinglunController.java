@@ -56,24 +56,15 @@ public class PinglunController {
     return ApiResponse.ok();
   }
   @RequestMapping(value = "/fabu")
-  public ApiResponse uploadFiles(String uid, String fid,  String did, String text,
-                                 String nickName, String avatarUrl,Integer level, String location)  {
+  public ApiResponse uploadFiles(String uid, String fiud,  String did, String text,
+                                 String nickName, String avatarUrl,Integer level,Integer dian_zan, String location)  {
     logger.error("收到上传请求 /fabu");
     logger.error("uid：" + uid);
     logger.error("text：" + text);
-    logger.error("fid：" + fid);
+    logger.error("fid：" + fiud);
     logger.error("avatarUrl : "+avatarUrl);
     logger.error("location : "+location);
-    Pinglun pinglun = Pinglun.builder()
-            .uid(uid)
-            .fuid(fid)
-            .did(did)
-            .text(text)
-            .nickName(nickName)
-            .avatarUrl(avatarUrl)
-            .level(level)
-            .location(location)
-            .build();
+    Pinglun pinglun = new Pinglun(uid, fiud, did, text,nickName,avatarUrl,level,dian_zan,location);
     pinglunService.insert(pinglun);
     return ApiResponse.ok();
   }

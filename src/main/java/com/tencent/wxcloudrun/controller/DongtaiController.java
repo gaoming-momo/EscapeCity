@@ -4,6 +4,7 @@ import com.tencent.wxcloudrun.config.ApiResponse;
 import com.tencent.wxcloudrun.model.Dongtai;
 import com.tencent.wxcloudrun.model.User;
 import com.tencent.wxcloudrun.service.DongtaiService;
+import com.tencent.wxcloudrun.service.PinglunService;
 import com.tencent.wxcloudrun.service.UserService;
 import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
@@ -51,7 +52,7 @@ public class DongtaiController {
   @RequestMapping(value = "/fabu")
   public ApiResponse uploadFiles(String fileIds, String openid, String text,
                                  String nickName, String avatarUrl, String location)  {
-    logger.error("收到上传请求 /uploadFiles");
+    logger.error("收到上传请求 /fabu");
     logger.error("openid：" + openid);
     logger.error("text：" + text);
     logger.error("fileIds：" + fileIds);

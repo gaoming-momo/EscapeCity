@@ -1,15 +1,11 @@
 package com.tencent.wxcloudrun.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-@Builder
-@AllArgsConstructor
 public class Dongtai implements Serializable {
   public Dongtai(String openId, String text, String nickName, String avatarUrl, String media_list, String location){
       this.uid = openId;

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.wxcloudrun.dao.MessageMapper">
+
+    <resultMap id="msgMapper" type="com.tencent.wxcloudrun.model.Message">
+        <id property="id" column="id"/>
+        <result property="type" column="type"/>
+        <result property="msg" column="msg" />
+    </resultMap>
+
+    <select id="get" resultMap="msgMapper">
+        SELECT *
+        FROM t_message
+        WHERE id = ${id}
+    </select>
+
+    <delete id="delete" parameterType="com.tencent.wxcloudrun.model.Message">
+        DELETE
+        FROM t_message
+        where id = #{id}
+    </delete>
+
+    <update id="insert" parameterType="com.tencent.wxcloudrun.model.Message">
+        INSERT INTO `t_message`(`id`, `type`,`msg`)
+        VALUE(#{id}, #{type}, #{msg})
+    </update>
+
+</mapper>
