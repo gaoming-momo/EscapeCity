@@ -33,8 +33,8 @@ public class DongtaiController {
     this.logger = LoggerFactory.getLogger(DongtaiController.class);
   }
   @RequestMapping(value = "/get")
-  public ApiResponse get(@Param("id") String id){
-    Optional<Dongtai> dongtai = dongtaiService.getById(id);
+  public ApiResponse get(@Param("id") Integer id){
+    Dongtai dongtai = dongtaiService.getById(id);
     return ApiResponse.ok(dongtai);
   }
 

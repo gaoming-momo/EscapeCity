@@ -30,9 +30,9 @@ CREATE TABLE `t_dongtai` (
 
 CREATE TABLE `t_pinglun` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` varchar(36) NOT NULL COMMENT '本条评论人Id',
-  `fuid` varchar(36) NOT NULL COMMENT '回复给那个人的Id',
-  `did` varchar(36) NOT NULL COMMENT '动态Id',
+  `uid` varchar(36) DEFAULT NULL COMMENT '本条评论人Id',
+  `fuid` varchar(36) DEFAULT NULL COMMENT '回复给那个人的Id',
+  `did` int(36) DEFAULT NULL COMMENT '动态Id',
   `text` text COMMENT '评论内容',
   `nickName` text COMMENT '昵称',
   `avatarUrl` text COMMENT '头像地址',

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Data
 public class Pinglun implements Serializable {
-  public Pinglun(String uid, String fuid, String did, String text,
+  public Pinglun(String uid, String fuid, Integer did, String text,
                  String nickName, String avatarUrl, Integer level,
                  Integer dian_zan, String location){
     this.uid = uid;
@@ -24,7 +24,7 @@ public class Pinglun implements Serializable {
   private Integer id;
   private String uid;
   private String fuid;
-  private String did;
+  private Integer did;
   private String text;
   private String nickName;
   private String avatarUrl;

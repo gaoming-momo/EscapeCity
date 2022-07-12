@@ -10,7 +10,7 @@ import java.util.List;
 @Mapper
 public interface DongtaiMapper {
 
-  Dongtai getById(@Param("id") String id);
+  Dongtai getById(@Param("id") Integer id);
 
   Dongtai getByUid(@Param("uid") String uid);
 

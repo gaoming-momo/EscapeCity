@@ -48,7 +48,7 @@ public class PinglunController {
   ApiResponse get(@RequestBody Pinglun pinglun) {
     logger.error("add get request:{}",pinglun);
     pinglunService.insert(pinglun);
-    Dongtai dongtai = dongtaiService.getByUid(pinglun.getDid());
+    Dongtai dongtai = dongtaiService.getById(pinglun.getDid());
     Integer pinglun_num = dongtai.getPinglun_num();
     pinglun_num = pinglun_num + 1;
     dongtai.setPinglun_num(pinglun_num);
@@ -56,7 +56,7 @@ public class PinglunController {
     return ApiResponse.ok();
   }
   @RequestMapping(value = "/fabu")
-  public ApiResponse uploadFiles(String uid, String fiud,  String did, String text,
+  public ApiResponse uploadFiles(String uid, String fiud,  Integer did, String text,
                                  String nickName, String avatarUrl,Integer level,Integer dian_zan, String location)  {
     logger.error("收到上传请求 /fabu");
     logger.error("uid：" + uid);

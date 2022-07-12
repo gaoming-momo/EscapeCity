@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DongtaiService {
-  Optional<Dongtai> getById(String id);
+  Dongtai getById(Integer id);
   Dongtai getByUid(String uid);
   void insert(Dongtai dongtai);
   void delete(Dongtai dongtai);
