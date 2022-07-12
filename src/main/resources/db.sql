@@ -45,8 +45,8 @@ CREATE TABLE `t_pinglun` (
 )
 
 CREATE TABLE `t_message` (
-  `id` int (11) NOT NULL COMMENT '自增Id',
-  `type` varchar (20) NULL DEFAULT '' COMMENT '消息类型，pinglun,dianzan,shoucang,sixing',
-  `msg` text NULL COMMENT '消息内容，自定义内容',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增Id',
+  `type` varchar(20) DEFAULT '' COMMENT '消息类型，pinglun,dianzan,shoucang,sixing',
+  `msg` text COMMENT '消息内容，自定义内容',
   PRIMARY KEY (`id`)
-) COMMENT = "一个消息表，存储评论、点赞、收藏、私信等消息"
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='一个消息表，存储评论、点赞、收藏、私信等消息'

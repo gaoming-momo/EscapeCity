@@ -21,8 +21,8 @@
     </delete>
 
     <update id="insert" parameterType="com.tencent.wxcloudrun.model.Message">
-        INSERT INTO `t_message`(`id`, `type`,`msg`)
-        VALUE(#{id}, #{type}, #{msg})
+        INSERT INTO `t_message`(`type`,`msg`)
+        VALUE(#{type}, #{msg})
     </update>
 
 </mapper>

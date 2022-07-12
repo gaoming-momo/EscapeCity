@@ -1,9 +1,12 @@
 package com.tencent.wxcloudrun.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.tencent.wxcloudrun.config.ApiResponse;
 import com.tencent.wxcloudrun.model.Dongtai;
+import com.tencent.wxcloudrun.model.Message;
 import com.tencent.wxcloudrun.model.Pinglun;
 import com.tencent.wxcloudrun.service.DongtaiService;
+import com.tencent.wxcloudrun.service.MessageService;
 import com.tencent.wxcloudrun.service.PinglunService;
 import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
@@ -23,14 +26,15 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/pinglun")
 public class PinglunController {
-
-  final PinglunService pinglunService;
-  final DongtaiService dongtaiService;
+  @Autowired
+  PinglunService pinglunService;
+  @Autowired
+  DongtaiService dongtaiService;
+  @Autowired
+  MessageService messageService;
   final Logger logger;
 
-  public PinglunController(@Autowired PinglunService pinglunService , @Autowired DongtaiService dongtaiService) {
-    this.pinglunService = pinglunService;
-    this.dongtaiService = dongtaiService;
+  public PinglunController() {
     this.logger = LoggerFactory.getLogger(PinglunController.class);
   }
   @RequestMapping(value = "/get")
@@ -48,11 +52,20 @@ public class PinglunController {
   ApiResponse get(@RequestBody Pinglun pinglun) {
     logger.error("add get request:{}",pinglun);
     pinglunService.insert(pinglun);
+    //有人评论了动态，那么给该动态的评论数加一
     Dongtai dongtai = dongtaiService.getById(pinglun.getDid());
     Integer pinglun_num = dongtai.getPinglun_num();
     pinglun_num = pinglun_num + 1;
     dongtai.setPinglun_num(pinglun_num);
     dongtaiService.update(dongtai);
+    //同时给该动态的所有者发一条信息
+    Message msg = new Message();
+    msg.setType("pinglun");
+    JSONObject msgJson = new JSONObject();
+    msgJson.put("dongtai",JSONObject.toJSONString(dongtai));
+    msgJson.put("pinglun",JSONObject.toJSONString(pinglun));
+    msg.setMsg(msgJson.toJSONString());
+    messageService.insert(msg);
     return ApiResponse.ok();
   }
   @RequestMapping(value = "/fabu")
