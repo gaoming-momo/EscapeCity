@@ -48,7 +48,7 @@ public class PinglunController {
   ApiResponse get(@RequestBody Pinglun pinglun) {
     logger.error("add get request:{}",pinglun);
     pinglunService.insert(pinglun);
-    Dongtai dongtai = dongtaiService.getById(pinglun.getDid()).get();
+    Dongtai dongtai = dongtaiService.getByUid(pinglun.getDid());
     Integer pinglun_num = dongtai.getPinglun_num();
     pinglun_num = pinglun_num + 1;
     dongtai.setPinglun_num(pinglun_num);

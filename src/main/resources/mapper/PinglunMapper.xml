@@ -35,7 +35,7 @@
         where id = #{id}
     </delete>
 
-    <update id="insert" parameterType="com.tencent.wxcloudrun.model.Dongtai">
+    <update id="insert" parameterType="com.tencent.wxcloudrun.model.Pinglun">
         INSERT INTO `t_pinglun`(`uid`, `fuid`, `did`, `text`, `nickName`, `avatarUrl`, `level`, `dian_zan`,`location`)
         VALUE(#{uid}, #{fuid}, #{did}, #{text}, #{nickName}, #{avatarUrl}, #{level}, #{dian_zan}, #{location})
 

@@ -8,6 +8,7 @@ import java.util.Optional;
 
 public interface DongtaiService {
   Optional<Dongtai> getById(String id);
+  Dongtai getByUid(String uid);
   void insert(Dongtai dongtai);
   void delete(Dongtai dongtai);
   List<Dongtai> fetch(Integer currentPage, Integer pageSize);

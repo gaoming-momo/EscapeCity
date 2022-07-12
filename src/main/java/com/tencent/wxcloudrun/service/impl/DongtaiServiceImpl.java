@@ -21,10 +21,14 @@ public class DongtaiServiceImpl implements DongtaiService {
   }
 
   @Override
-
   public Optional<Dongtai> getById(String id) {
     Dongtai dongtai = dongtaiMapper.getById(id);
     return Optional.ofNullable(dongtai);
+  }
+
+  @Override
+  public Dongtai getByUid(String uid) {
+    return dongtaiMapper.getByUid(uid);
   }
 
   @Override

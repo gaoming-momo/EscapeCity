@@ -1,9 +1,6 @@
 package com.tencent.wxcloudrun.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import org.apache.ibatis.annotations.ConstructorArgs;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

@@ -59,6 +59,7 @@ public class DongtaiController {
     logger.error("avatarUrl : "+avatarUrl);
     logger.error("location : "+location);
     Dongtai dongtai = new Dongtai(openid, text, nickName, avatarUrl, fileIds,location);
+    logger.error("dongtai;:{}",dongtai);
     dongtaiService.insert(dongtai);
     return ApiResponse.ok();
   }

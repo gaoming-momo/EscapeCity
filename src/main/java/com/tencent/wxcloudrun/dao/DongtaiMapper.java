@@ -12,6 +12,8 @@ public interface DongtaiMapper {
 
   Dongtai getById(@Param("id") String id);
 
+  Dongtai getByUid(@Param("uid") String uid);
+
   void insert(Dongtai dongtai);
 
   void delete(Dongtai dongtai);
