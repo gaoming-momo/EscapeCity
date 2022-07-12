@@ -37,6 +37,11 @@ public class DongtaiServiceImpl implements DongtaiService {
   }
 
   @Override
+  public void update(Dongtai dongtai) {
+    dongtaiMapper.update(dongtai);
+  }
+
+  @Override
   public void delete(Dongtai dongtai) {
     dongtaiMapper.delete(dongtai);
   }

@@ -10,6 +10,7 @@ public interface DongtaiService {
   Dongtai getById(Integer id);
   Dongtai getByUid(String uid);
   void insert(Dongtai dongtai);
+  void update(Dongtai dongtai);
   void delete(Dongtai dongtai);
   List<Dongtai> fetch(Integer currentPage, Integer pageSize);
   List<Dongtai> mine(Integer currentPage, Integer pageSize, String uid);

@@ -40,10 +40,14 @@
         where id = #{id}
     </delete>
 
-    <update id="insert" parameterType="com.tencent.wxcloudrun.model.Dongtai">
+    <insert id="insert" parameterType="com.tencent.wxcloudrun.model.Dongtai">
         INSERT INTO `t_dongtai`(`uid`, `media_list`, `text`, `nickName`, `avatarUrl`, `shoucang_num`, `dian_zan`,`location`)
         VALUE(#{uid}, #{media_list}, #{text}, #{nickName}, #{avatarUrl}, #{shoucang_num}, #{dian_zan}, #{location})
-
+    </insert>
+    <update id="update" parameterType="com.tencent.wxcloudrun.model.Dongtai">
+        update `t_dongtai` set `uid`= #{uid}, `media_list`=#{media_list}, `text`=#{text}, `nickName`=#{nickName},
+         `avatarUrl`=#{avatarUrl}, `shoucang_num`=#{shoucang_num}, `dian_zan`=#{dian_zan},`location`=#{location}
+         WHERE id = #{id}
     </update>
 
 </mapper>

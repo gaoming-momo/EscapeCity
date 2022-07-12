@@ -16,6 +16,8 @@ public interface DongtaiMapper {
 
   void insert(Dongtai dongtai);
 
+  void update(Dongtai dongtai);
+
   void delete(Dongtai dongtai);
 
   List<Dongtai> fetch(@Param("currentPage") Integer currentPage, @Param("pageSize") Integer pageSize);

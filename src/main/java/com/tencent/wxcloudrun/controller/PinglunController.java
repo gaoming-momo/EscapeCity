@@ -52,7 +52,7 @@ public class PinglunController {
     Integer pinglun_num = dongtai.getPinglun_num();
     pinglun_num = pinglun_num + 1;
     dongtai.setPinglun_num(pinglun_num);
-    dongtaiService.insert(dongtai);
+    dongtaiService.update(dongtai);
     return ApiResponse.ok();
   }
   @RequestMapping(value = "/fabu")
