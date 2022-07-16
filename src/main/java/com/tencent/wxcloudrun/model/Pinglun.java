@@ -1,11 +1,12 @@
 package com.tencent.wxcloudrun.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
 @Data
+@AllArgsConstructor
 public class Pinglun implements Serializable {
   public Pinglun(String uid, String fuid, Integer did, String text,
                  String nickName, String avatarUrl, Integer level,
