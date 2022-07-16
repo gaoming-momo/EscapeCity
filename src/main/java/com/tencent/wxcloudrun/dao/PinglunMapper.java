@@ -10,7 +10,7 @@ import java.util.List;
 public interface PinglunMapper {
 
   Pinglun getById(@Param("id") Integer id);
-
+  Pinglun getByDid(@Param("did") Integer did);
   void insert(Pinglun pinglun);
 
   void delete(Pinglun pinglun);

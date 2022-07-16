@@ -25,6 +25,12 @@ public class PinglunServiceImpl implements PinglunService {
   }
 
   @Override
+  public Pinglun getByDid(Integer did) {
+    Pinglun pinglun = pinglunMapper.getByDid(did);
+    return pinglun;
+  }
+
+  @Override
   public void insert(Pinglun pinglun) {
     pinglunMapper.insert(pinglun);
   }
