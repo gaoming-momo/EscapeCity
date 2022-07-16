@@ -38,7 +38,8 @@ public class PinglunController {
     this.logger = LoggerFactory.getLogger(PinglunController.class);
   }
   @RequestMapping(value = "/get")
-  public ApiResponse get(@Param("id") String id){
+  public ApiResponse get(@Param("id") Integer id){
+    logger.error("pinglun get request:{}",id);
     Optional<Pinglun> pinglun = pinglunService.getById(id);
     return ApiResponse.ok(pinglun);
   }
