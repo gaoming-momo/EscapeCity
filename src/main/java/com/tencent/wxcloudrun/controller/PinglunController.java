@@ -46,8 +46,8 @@ public class PinglunController {
   @RequestMapping(value = "/getByDid")
   public ApiResponse getByDid(@Param("did") Integer did){
     logger.error("pinglun getByDid request:{}",did);
-    Pinglun pinglun = pinglunService.getByDid(did);
-    return ApiResponse.ok(pinglun);
+    List<Pinglun> pinglunList = pinglunService.getByDid(did);
+    return ApiResponse.ok(pinglunList);
   }
 
   /**
