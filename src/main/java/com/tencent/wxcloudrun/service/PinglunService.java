@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PinglunService {
-  Optional<Pinglun> getById(String id);
+  Optional<Pinglun> getById(Integer id);
   void insert(Pinglun pinglun);
   void delete(Pinglun pinglun);
   List<Pinglun> fetch(Integer currentPage, Integer pageSize);

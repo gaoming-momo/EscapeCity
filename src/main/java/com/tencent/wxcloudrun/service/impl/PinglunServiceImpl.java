@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 public class PinglunServiceImpl implements PinglunService {
-  final PinglunMapper pinglunMapper;
+  PinglunMapper pinglunMapper;
 
   public PinglunServiceImpl(@Autowired PinglunMapper pinglunMapper) {
     this.pinglunMapper = pinglunMapper;
@@ -19,7 +19,7 @@ public class PinglunServiceImpl implements PinglunService {
 
   @Override
 
-  public Optional<Pinglun> getById(String id) {
+  public Optional<Pinglun> getById(Integer id) {
     Pinglun pinglun = pinglunMapper.getById(id);
     return Optional.ofNullable(pinglun);
   }

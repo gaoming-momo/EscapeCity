@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface PinglunMapper {
 
-  Pinglun getById(@Param("id") String id);
+  Pinglun getById(@Param("id") Integer id);
 
   void insert(Pinglun pinglun);
 
