@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
+@AllArgsConstructor
 public class Dongtai implements Serializable {
   public Dongtai(String openId, String text, String nickName, String avatarUrl, String media_list, String location){
       this.uid = openId;
@@ -14,6 +15,9 @@ public class Dongtai implements Serializable {
       this.avatarUrl = avatarUrl;
       this.media_list = media_list;
       this.location = location;
+  }
+  Dongtai(){
+
   }
 
   private Integer id;

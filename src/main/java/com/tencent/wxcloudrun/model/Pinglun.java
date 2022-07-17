@@ -8,8 +8,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class Pinglun implements Serializable {
+  Pinglun(){}
   public Pinglun(String uid, String fuid, Integer did, String text,
                  String nickName, String avatarUrl, Integer level,
                  Integer dian_zan, String location){
