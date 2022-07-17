@@ -16,7 +16,7 @@ public class Dongtai implements Serializable {
       this.media_list = media_list;
       this.location = location;
   }
-  Dongtai(){
+  public Dongtai(){
 
   }
 

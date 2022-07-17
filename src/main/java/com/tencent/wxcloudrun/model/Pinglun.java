@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 public class Pinglun implements Serializable {
-  Pinglun(){}
+  public Pinglun(){}
   public Pinglun(String uid, String fuid, Integer did, String text,
                  String nickName, String avatarUrl, Integer level,
                  Integer dian_zan, String location){
