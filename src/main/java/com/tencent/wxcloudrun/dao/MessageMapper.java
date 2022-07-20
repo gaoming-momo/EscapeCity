@@ -4,6 +4,8 @@ import com.tencent.wxcloudrun.model.Message;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 @Mapper
 public interface MessageMapper {
 
@@ -12,4 +14,6 @@ public interface MessageMapper {
   void insert(Message message);
 
   void delete(Message message);
+
+  List<Message> getByFuid(String fuid);
 }

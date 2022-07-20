@@ -6,12 +6,21 @@
         <id property="id" column="id"/>
         <result property="type" column="type"/>
         <result property="msg" column="msg" />
+        <result property="pid" column="pid" />
+        <result property="fuid" column="fuid" />
+        <result property="did" column="did" />
     </resultMap>
 
     <select id="get" resultMap="msgMapper">
         SELECT *
         FROM t_message
-        WHERE id = ${id}
+        WHERE id = #{id}
+    </select>
+
+    <select id="getByFuid" resultMap="msgMapper">
+        SELECT *
+        FROM t_message
+        WHERE fuid = #{fuid}
     </select>
 
     <delete id="delete" parameterType="com.tencent.wxcloudrun.model.Message">
@@ -21,8 +30,8 @@
     </delete>
 
     <update id="insert" parameterType="com.tencent.wxcloudrun.model.Message">
-        INSERT INTO `t_message`(`type`,`msg`)
-        VALUE(#{type}, #{msg})
+        INSERT INTO `t_message`(`type`,`msg`,`pid`,`fuid`,`did`)
+        VALUE(#{type}, #{msg}, #{pid}, #{fuid}, #{did})
     </update>
 
 </mapper>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -28,11 +29,18 @@ public class MessageController {
     this.messageService = messageService;
     this.logger = LoggerFactory.getLogger(MessageController.class);
   }
-  @RequestMapping(value = "/getbyid")
-  public ApiResponse getUser(@Param("id") String id){
+  @RequestMapping(value = "/getByid")
+  public ApiResponse getByid(@Param("id") String id){
     Message msg = messageService.get(id);
     return ApiResponse.ok(msg);
   }
+
+  @RequestMapping(value = "/getByFuid")
+  public ApiResponse getByFuid(@Param("fuid") String fuid){
+    List<Message> msg =  messageService.getByFuid(fuid);
+    return ApiResponse.ok(msg);
+  }
+
 
   /**
    * 新增用户

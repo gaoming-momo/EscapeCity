@@ -24,7 +24,7 @@
     <select id="getByDid" resultMap="pinglunMapper" parameterType="java.lang.Integer">
         SELECT *
         FROM `t_pinglun`
-        WHERE did = #{did}
+        WHERE did = #{did} order by `createdAt` desc
     </select>
     <select id="fetch" resultMap="pinglunMapper">
         select * from `t_pinglun` order by `createdAt` desc limit #{currentPage} , #{pageSize}

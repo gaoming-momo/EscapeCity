@@ -12,4 +12,10 @@ public class Message implements Serializable {
   private String type;
 
   private String msg;
+
+  private Integer pid;
+
+  private String fuid;
+
+  private Integer did;
 }

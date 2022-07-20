@@ -9,6 +9,7 @@ import com.tencent.wxcloudrun.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,6 +24,11 @@ public class MessageServiceImpl implements MessageService {
   public Message get(String id) {
     Message msg = messageMapper.get(id);
     return msg;
+  }
+
+  @Override
+  public List<Message> getByFuid(String fuid) {
+    return messageMapper.getByFuid(fuid);
   }
 
   @Override

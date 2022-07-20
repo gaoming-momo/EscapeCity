@@ -72,6 +72,9 @@ public class PinglunController {
     msgJson.put("dongtai",JSONObject.toJSONString(dongtai));
     msgJson.put("pinglun",JSONObject.toJSONString(pinglun));
     msg.setMsg(msgJson.toJSONString());
+    msg.setDid(dongtai.getId());
+    msg.setFuid(dongtai.getUid());
+    msg.setPid(pinglun.getId());
     messageService.insert(msg);
     return ApiResponse.ok();
   }
